@@ -4,55 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="sass/main.css">
     <title>Document</title>
 </head>
-
-<style>
-    * {
-        margin: 0;
-        padding: 0;
-    }
-
-    body {
-        width: 100%;
-        height: 100vh;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-direction: column;
-    }
-
-    .container {
-        width: 500px;
-        height: auto;
-        padding: 20px;
-        background-color: red;
-    }
-
-    .frame {
-        overflow: hidden;
-        width: 100%;
-    }
-
-    .slider {
-        display: flex;
-        width: 100%;
-        /* transform: translateX(-200%); */
-    }
-
-    .frame img {
-        width: 100%;
-    }
-
-    .buttons {
-        margin-top: 50px;
-    }
-
-    .buttons button {
-        padding: 10px 15px;
-        margin: 0 15px;
-    }
-</style>
 
 <body>
     <div class="container">
@@ -71,38 +25,7 @@
         <button id="next">next</button>
     </div>
 
-    <script>
-        let nextBtn = document.querySelector('#next');
-        let prevBtn = document.querySelector('#prev');
-        let slider = document.querySelector('.slider');
-
-        let images = document.querySelectorAll('img');
-
-        const imagesNum = Array.from(images)
-
-        let slideNumNext = 1;
-
-        let slideNumPrev = images.length;
-
-        nextBtn.addEventListener('click', slideNext)
-
-
-        prevBtn.addEventListener('click',slidePrev)
-
-        function slideNext() {
-            if (slideNumNext < images.length) {
-                slider.style.transform = `translateX(-${slideNumNext * 100}%)`;
-                slideNumNext ++;
-            } else {
-                slider.style.transform = `translateX(0)`;
-                slideNumNext = 1;
-            }
-        }
-        function slidePrev() {
-           
-        }
-
-    </script>
+    <script src="script.js"></script>
 </body>
 
 </html>

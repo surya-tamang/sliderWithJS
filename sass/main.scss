@@ -1,0 +1,46 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.container {
+    width: 500px;
+    height: auto;
+    padding: 20px;
+    background-color: red;
+
+    .frame {
+        overflow: hidden;
+        width: 100%;
+
+        .slider {
+            display: flex;
+            width: 100%;
+            transition: all 0.3s ease-in;
+
+            img {
+                width: 100%;
+            }
+        }
+    }
+}
+
+.buttons {
+    margin-top: 50px;
+}
+
+.buttons button {
+    padding: 10px 15px;
+    margin: 0 15px;
+    margin-top: 50px;
+}
