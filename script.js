@@ -7,22 +7,31 @@ let slideNumNext = 1;
 
 let slideNumPrev = images.length;
 
-nextBtn.addEventListener('click', slideNext)
+nextBtn.addEventListener('click',()=>{
+    slideNumNext < images.length ? slideNext() : firstSlide();
+})
 
 
-prevBtn.addEventListener('click',slidePrev)
+prevBtn.addEventListener('click',()=>{
+    slideNumNext > 1 ? slidePrev() : lastSlide ();
+})
 
 
 
 function slideNext() {
-    if (slideNumNext < images.length) {
         slider.style.transform = `translateX(-${slideNumNext * 100}%)`;
         slideNumNext ++;
-    } else {
-        slider.style.transform = `translateX(0)`;
-        slideNumNext = 1;
-    }
 }
 function slidePrev() {
-   
+        slider.style.transform = `translateX(-${(slideNumNext-2) * 100}%)`;
+        slideNumNext --;
+}
+
+function firstSlide(){
+    slider.style.transform = `translateX(0)`;
+    slideNumNext = 1;
+}
+function lastSlide(){
+    slider.style.transform = `translateX(-${(images.length - 1)*100}%)`;
+    slideNumNext = 1;
 }
